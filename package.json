@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "build": "./node_modules/.bin/parcel build views/layouts/main.hbs"
+    "build": "netlify-lambda build express"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-less": "^2.0.0-beta.2",
-    "parcel": "*"
+    "netlify-lambda": "^2.0.11",
+    "parcel": "^2.0.0-beta.2"
   },
   "dependencies": {
     "express": "^4.17.1",
