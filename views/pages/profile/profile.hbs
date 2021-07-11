@@ -1,0 +1,69 @@
+<div class="profile">
+    <div class="profile__back">
+        <a href="/chat">
+            < Назад
+        </a>
+    </div>
+
+    <div class="profile__wrapper">
+        <div class="profile__avatar">
+            <span>
+                ?
+            </span>
+        </div>
+
+        <div class="row">
+            <label class="profile__input-wrapper">
+                <span class="profile__input-title">
+                    E-mail
+                </span>
+
+                <input class="profile__input" type="text" value={{email}} />
+            </label>
+
+            <label class="profile__input-wrapper">
+                <span class="profile__input-title">
+                    Логин
+                </span>
+
+                <input class="profile__input" type="text" value={{login}} />
+            </label>
+        </div>
+
+        <div class="row">
+            <label class="profile__input-wrapper">
+                <span class="profile__input-title">
+                    Имя
+                </span>
+
+                <input class="profile__input" type="text" value={{first_name}} />
+            </label>
+
+            <label class="profile__input-wrapper">
+                <span class="profile__input-title">
+                    Фамилия
+                </span>
+
+                <input class="profile__input" type="text" value={{second_name}} />
+            </label>
+        </div>
+
+        <div class="row">
+            <label class="profile__input-wrapper">
+                <span class="profile__input-title">
+                    Телефон
+                </span>
+
+                <input class="profile__input" type="text" value={{phone}} />
+            </label>
+        </div>
+
+        {{> button class="profile__button" title="Сохранить"}}
+
+        <div class="profile__link">
+            <a href="/login">
+                Выйти
+            </a>
+        </div>
+    </div>
+</div>
