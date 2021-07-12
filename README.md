@@ -1,6 +1,6 @@
 ## Chat
 
-Это приложение чата, созданное с использованием Node.js, Express.
+Это приложение чата, созданное с использованием Handlebars, server.
 Проект находится на начальной стадии разработки.
 
 [Ссылка на Netlify](jovial-euler-cedd13.netlify.app)
@@ -11,10 +11,8 @@
 
 ## Установка
 
-- `npm install` — установка стабильной версии
-- `npm start` — запуск версии
-
- ### NPM Packages
- - Express
- - Express-handlebars
- - Less-middleware
+- `npm install` — установка зависимостей проекта
+- `npm start` — запуск проекта
+- `npm run clear` — очистка папки dist
+- `npm run build` — сборка проекта
+- `npm run build:dev` — сборка проекта и раздача статики из папки dist
