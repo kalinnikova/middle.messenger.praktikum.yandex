@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.less">
+    <link rel="stylesheet" href="./layouts/profile.less">
+    <title> {{ profile.title }}  </title>
+</head>
+
+<body>
+{{#block "main"}}
+
+    <div class="profile">
+        <div class="profile__back">
+            <a href="/chat">
+                < Назад
+            </a>
+        </div>
+
+        <div class="profile__wrapper">
+            <div class="profile__avatar">
+            <span>
+                ?
+            </span>
+            </div>
+
+            <div class="row">
+                <label class="profile__input-wrapper">
+                <span class="profile__input-title">
+                    E-mail
+                </span>
+
+                    <input class="profile__input" type="text" value={{profile.email}} />
+                </label>
+
+                <label class="profile__input-wrapper">
+                <span class="profile__input-title">
+                    Логин
+                </span>
+
+                    <input class="profile__input" type="text" value={{profile.login}} />
+                </label>
+            </div>
+
+            <div class="row">
+                <label class="profile__input-wrapper">
+                <span class="profile__input-title">
+                    Имя
+                </span>
+
+                    <input class="profile__input" type="text" value={{profile.first_name}} />
+                </label>
+
+                <label class="profile__input-wrapper">
+                <span class="profile__input-title">
+                    Фамилия
+                </span>
+
+                    <input class="profile__input" type="text" value={{profile.second_name}} />
+                </label>
+            </div>
+
+            <div class="row">
+                <label class="profile__input-wrapper">
+                <span class="profile__input-title">
+                    Телефон
+                </span>
+
+                    <input class="profile__input" type="text" value={{profile.phone}} />
+                </label>
+            </div>
+
+            {{> button class="profile__button" title="Сохранить"}}
+
+            <div class="profile__link">
+                <a href="/login">
+                    Выйти
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+{{/block}}
+</body>
+{{#block "scripts"}}
+    {{> scripts}}
+{{/block}}
+</html>

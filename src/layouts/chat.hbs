@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="main.less">
+        <link rel="stylesheet" href="./layouts/chat.less">
+        <title> {{ chat.title }}  </title>
+    </head>
+
+    <body>
+    {{#block "main"}}
+        <div class="chat">
+            <div class="chat__wrapper">
+                <div class="chat__dialogues">
+                    <div class="chat__profile">
+                        <a href="/profile">
+                            Профиль >
+                        </a>
+                    </div>
+
+                    <input class="chat__search" placeholder="Поиск" />
+
+                    {{#each chat.dialogues}}
+                        <div class="chat__dialogue">
+
+                            <div class="chat__avatar"></div>
+
+                            <div class="chat__name">
+                                {{name}}
+                            </div>
+
+                            <div class="chat__last-message">
+                                {{lastMessage}}
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+
+                <div class="chat__messages-wrapper">
+                    <div class="chat__message-input">
+                        <input type="text" class="chat__message" placeholder="Сообщение" value={{message}} />
+
+                        <div class="chat__send">
+                    <span>
+                        >
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/block}}
+    </body>
+    {{#block "scripts"}}
+        {{> scripts}}
+    {{/block}}
+</html>

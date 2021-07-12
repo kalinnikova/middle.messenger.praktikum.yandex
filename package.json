@@ -2,22 +2,23 @@
   "name": "test",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "start": "node server.js",
-    "build": "netlify-lambda build express"
+    "clear": "rm -rf ./dist",
+    "start": "npm run clear && parcel src/*.html --open --no-cache",
+    "build": "npm run clear && parcel build src/*.html --no-cache",
+    "build:dev": "npm run build && serve ./dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/transformer-less": "^2.0.0-beta.2",
-    "netlify-lambda": "^2.0.11",
-    "parcel": "^2.0.0-beta.2"
+    "less": "^4.1.1",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-handlebars": "^0.4.4",
+    "serve": "^12.0.0"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "express-handlebars": "^5.3.2",
-    "less-middleware": "^3.1.0"
+    "handlebars": "^4.7.7"
   }
 }
