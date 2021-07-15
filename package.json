@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "clear": "rm -rf ./dist",
-    "start": "npm run build && serve ./dist",
+    "start": "npm run build && serve ./dist -p 3000",
     "build": "npm run clear && parcel build src/*.html --no-cache"
   },
   "keywords": [],
