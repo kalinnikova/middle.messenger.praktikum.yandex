@@ -1,53 +1,36 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="main.less">
-    <link rel="stylesheet" href="./layouts/login.less">
-    <title> {{ login.title }}  </title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="main.less">
+        <link rel="stylesheet" href="./layouts/login.less">
+        <title> {{ login.title }}  </title>
+    </head>
 
-<body>
-{{#block "main"}}
+    <body>
+        <div class="login">
+            <h2 class="login__title">Авторизация</h2>
 
-    <div class="login">
-        <h2 class="login__title">Авторизация</h2>
+            <div class="login__wrapper">
+                {{> input class="login__input-wrapper" type="text" title="Логин" value=login.login }}
 
-        <div class="login__wrapper">
-            <label class="login__input-wrapper">
-            <span class="login__input-title">
-                Логин
-            </span>
+                {{> input class="login__input-wrapper" type="password" title="Пароль" value=login.password }}
 
-                <input class="login__input" type="text" value={{login.login}} />
-            </label>
-
-            <label class="login__input-wrapper">
-            <span class="login__input-title">
-                Пароль
-            </span>
-
-                <input class="login__input" type="password" value={{login.password}} />
-            </label>
-
-            <a href="/chat">
-                {{> button title="Войти" class="login__button"}}
-            </a>
-
-            <div class="login__link">
-                <a href="/registration">
-                    Нет аккаунта?
+                <a href="/chat">
+                    <div class="login__button-wrapper">
+                        {{> button title="Войти" class="login__button"}}
+                    </div>
                 </a>
+
+                <div class="login__link">
+                    <a href="/registration">
+                        Нет аккаунта?
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-
-{{/block}}
-</body>
-{{#block "scripts"}}
-    {{> scripts}}
-{{/block}}
+    </body>
 </html>

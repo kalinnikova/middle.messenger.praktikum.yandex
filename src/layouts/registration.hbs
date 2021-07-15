@@ -1,103 +1,54 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="main.less">
-    <link rel="stylesheet" href="./layouts/registration.less">
-    <title> {{ profile.title }}  </title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="main.less">
+        <link rel="stylesheet" href="./layouts/registration.less">
+        <title> {{ profile.title }}  </title>
+    </head>
 
-<body>
-{{#block "main"}}
+    <body>
+        <div class="registration">
+            <h2 class="registration__title">Регистрация</h2>
 
-    <div class="registration">
-        <h2 class="registration__title">Регистрация</h2>
+            <div class="registration__wrapper">
+                <div class="row">
+                    {{> input class="registration__input-wrapper" type="email" title="E-mail" value=registration.email }}
 
-        <div class="registration__wrapper">
-            <div class="row">
-                <label class="registration__input-wrapper">
-                <span class="registration__input-title">
-                    E-mail
-                </span>
+                    {{> input class="registration__input-wrapper" type="text" title="Логин" value=registration.login }}
+                </div>
 
-                    <input class="registration__input" type="text" value={{registration.email}} />
-                </label>
+                <div class="row">
+                    {{> input class="registration__input-wrapper" type="text" title="Имя" value=registration.first_name }}
 
-                <label class="registration__input-wrapper">
-                <span class="registration__input-title">
-                    Логин
-                </span>
+                    {{> input class="registration__input-wrapper" type="text" title="Фамилия" value=registration.second_name }}
+                </div>
 
-                    <input class="registration__input" type="text" value={{registration.login}} />
-                </label>
-            </div>
+                <div class="row">
+                    {{> input class="registration__input-wrapper" type="text" title="Телефон" value=registration.phone }}
+                </div>
 
-            <div class="row">
-                <label class="registration__input-wrapper">
-                <span class="registration__input-title">
-                    Имя
-                </span>
+                <div class="line"></div>
 
-                    <input class="registration__input" type="text" value={{registration.first_name}} />
-                </label>
+                <div class="row">
+                    {{> input class="registration__input-wrapper" type="password" title="Пароль" value=registration.password }}
 
-                <label class="registration__input-wrapper">
-                <span class="registration__input-title">
-                    Фамилия
-                </span>
+                    {{> input class="registration__input-wrapper" type="password" title="Повторите пароль" value=registration.password }}
+                </div>
 
-                    <input class="registration__input" type="text" value={{registration.second_name}} />
-                </label>
-            </div>
+                <div class="registration__button-wrapper">
+                    {{> button class="registration__button" title="Зарегистрироваться"}}
+                </div>
 
-            <div class="row">
-                <label class="registration__input-wrapper">
-                <span class="registration__input-title">
-                    Телефон
-                </span>
-
-                    <input class="registration__input" type="text" value={{registration.phone}} />
-                </label>
-            </div>
-
-            <div class="line"></div>
-
-            <div class="row">
-                <label class="registration__input-wrapper">
-                <span class="registration__input-title">
-                    Пароль
-                </span>
-
-                    <input class="registration__input" type="password" value={{registration.password}} />
-                </label>
-
-                <label class="registration__input-wrapper">
-                <span class="registration__input-title">
-                    Повторите пароль
-                </span>
-
-                    <input class="registration__input" type="password" />
-                </label>
-            </div>
-
-            {{> button class="registration__button" title="Зарегистрироваться"}}
-
-            <div class="registration__link">
-                <a href="/login">
-                    Войти
-                </a>
+                <div class="registration__link">
+                    <a href="/">
+                        Войти
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-
-
-
-{{/block}}
-</body>
-{{#block "scripts"}}
-    {{> scripts}}
-{{/block}}
+    </body>
 </html>

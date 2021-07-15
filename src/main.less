@@ -1,3 +1,5 @@
+@import "./variables";
+
 html {
     margin: 0;
     height: 100%;
@@ -5,7 +7,7 @@ html {
 }
 
 body {
-    background-color: #99D1CB;
+    background-color: @light-green-color;
     margin: 0;
     height: 100%;
     font-family: sans-serif;
@@ -14,7 +16,6 @@ body {
 a {
     text-decoration: none;
 }
-
 
 label {
     width: 100%;
@@ -27,7 +28,7 @@ label span {
     text-align: left;
     font-size: 14px;
     line-height: 20px;
-    color: #959595;
+    color: @grey-color;
 }
 
 input {
@@ -35,7 +36,7 @@ input {
     width: 279px;
     height: 44px;
     box-shadow: none;
-    border: 1px solid #99D1CB;
+    border: 1px solid @light-green-color;
     border-radius: 4px;
     outline: none;
 }

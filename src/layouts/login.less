@@ -1,44 +1,46 @@
+@import "../variables";
+
 .login {
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: @white-color;
     padding-top: 69px;
     margin-top: 175px;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
     border-radius: 25px 25px 0 0;
 
-    .login__wrapper {
+    &__wrapper {
         margin: 0 auto;
         width: 300px;
     }
 
-    .login__title {
+    &__title {
         text-align: center;
         margin-top: 0;
         margin-bottom: 74px;
     }
 
-    .login__input {
-        width: 279px;
-    }
-
-    .login__button {
+    &__button {
         cursor: pointer;
         width: 100%;
         height: 44px;
-        color: white;
-        background: #99D1CB;
+        color: @white-color;
+        background: @light-green-color;
         font-size: 16px;
         border-radius: 4px;
         outline: none;
-        border: 1px solid #99D1CB;
+        border: 1px solid @light-green-color;
         margin-top: 128px;
         margin-bottom: 19px;
     }
 
-    .login__link {
+    &__button-wrapper {
+        text-align: center;
+    }
+
+    &__link {
         font-size: 16px;
-        color: #959595;
+        color: @grey-color;
         text-align: center;
         cursor: pointer;
     }

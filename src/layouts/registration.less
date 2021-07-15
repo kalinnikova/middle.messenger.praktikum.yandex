@@ -1,67 +1,69 @@
+@import "../variables";
+
 .registration {
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: @white-color;
     padding-top: 69px;
     margin-top: 175px;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
     border-radius: 25px 25px 0 0;
 
-    .registration__input-wrapper {
+    &__input-wrapper {
         margin-right: 36px;
     }
 
-    .registration__title {
+    &__title {
         text-align: center;
         margin-top: 0;
         margin-bottom: 74px;
     }
 
-    .registration__wrapper {
+    &__wrapper {
         margin: 0 auto;
         width: 616px;
     }
 
-    .registration__button {
+    &__button {
         cursor: pointer;
         width: 290px;
         height: 44px;
         color: white;
-        background: #99D1CB;
+        background-color: @light-green-color;
         font-size: 16px;
         border-radius: 4px;
         outline: none;
-        border: 1px solid #99D1CB;
+        border: 1px solid @light-green-color;
         margin-top: 128px;
         margin-bottom: 19px;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-        position: relative;
     }
 
-    .registration__input {
+    &__button-wrapper {
+        text-align: center;
+    }
+
+    &__input {
         width: 270px;
     }
 
-    .registration__link {
+    &__link {
         font-size: 16px;
-        color: #959595;
+        color: @grey-color;
         text-align: center;
         cursor: pointer;
     }
 
-    .registration__input-title {
+    &__input-title {
         display: block;
         text-align: left;
         font-size: 14px;
         line-height: 20px;
-        color: #959595;
+        color: @grey-color;
     }
 
     .line {
         width: 100%;
-        border-top: 1px solid #959595;
+        border-top: 1px solid @grey-color;
         margin-top: 31px;
         margin-bottom: 26px;
     }
