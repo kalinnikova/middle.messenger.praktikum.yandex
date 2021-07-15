@@ -15,4 +15,3 @@
 - `npm start` — запуск проекта
 - `npm run clear` — очистка папки dist
 - `npm run build` — сборка проекта
-- `npm run build:dev` — сборка проекта и раздача статики из папки dist
