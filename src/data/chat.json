@@ -1,0 +1,63 @@
+{
+  "title": "title",
+  "style": "chat.css",
+  "message": "Lol",
+  "dialogues": [
+    {
+      "name": "Андрей",
+      "lastMessage": "Привет!",
+      "quantity": 2,
+      "time": "10:49"
+    },
+
+    {
+      "name": "Андрей 2",
+      "lastMessage": "Привет",
+      "time": "13:09"
+    },
+
+    {
+      "name": "Котик",
+      "lastMessage": "Как дела?",
+      "quantity": 1,
+      "time": "12:18"
+    },
+
+    {
+      "name": "Гусь",
+      "lastMessage": "...",
+      "quantity": 1,
+      "time": "Пн"
+    },
+
+    {
+      "name": "Леха",
+      "lastMessage": "Изображение",
+      "time": "Пн"
+    },
+
+    {
+      "name": "Подруга",
+      "lastMessage": "Изображение",
+      "time": "Пн"
+    },
+
+    {
+      "name": "Друг",
+      "lastMessage": "Изображение",
+      "time": "Пн"
+    },
+
+    {
+      "name": "Иван",
+      "lastMessage": "Изображение",
+      "time": "Вс"
+    },
+
+    {
+      "name": "Инна А.",
+      "lastMessage": "Изображение",
+      "time": "Вс"
+    }
+  ]
+}

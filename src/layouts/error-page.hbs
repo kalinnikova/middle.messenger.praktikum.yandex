@@ -1,0 +1,17 @@
+{{#> layout style="error-page.less" title=error.title}}
+    <div class="error">
+        <div class="error__wrapper">
+            <h2 class="error__title">{{error.error}}</h2>
+
+            <div class="error__text">
+                {{error.text}}
+            </div>
+
+            <div class="error__link">
+                <a href="/chat">
+                    Назад к чатам
+                </a>
+            </div>
+        </div>
+    </div>
+{{/layout}}

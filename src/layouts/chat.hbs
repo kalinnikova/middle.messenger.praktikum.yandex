@@ -1,0 +1,29 @@
+{{#> layout style="chat.less" title=chat.title}}
+    <div class="chat">
+        <div class="chat__wrapper">
+            <div class="chat__dialogues">
+                <div class="chat__profile">
+                    <a href="/profile">
+                        Профиль >
+                    </a>
+                </div>
+
+                <input class="chat__search" placeholder="Поиск" />
+
+                {{> dialogues dialogues=chat.dialogues}}
+            </div>
+
+            <div class="chat__messages-wrapper">
+                <div class="chat__message-input">
+                    <input type="text" class="chat__message" placeholder="Сообщение" value={{message}} />
+
+                    <div class="chat__send">
+                <span>
+                    >
+                </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/layout}}

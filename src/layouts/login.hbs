@@ -1,0 +1,23 @@
+{{#> layout style="login.less" title=login.title}}
+    <div class="login">
+        <h2 class="login__title">Авторизация</h2>
+
+        <div class="login__wrapper">
+            {{> input class="login__input-wrapper" type="text" title="Логин" value=login.login }}
+
+            {{> input class="login__input-wrapper" type="password" title="Пароль" value=login.password }}
+
+            <a href="/chat">
+                <div class="login__button-wrapper">
+                    {{> button title="Войти" class="login__button"}}
+                </div>
+            </a>
+
+            <div class="login__link">
+                <a href="/registration">
+                    Нет аккаунта?
+                </a>
+            </div>
+        </div>
+    </div>
+{{/layout}}
