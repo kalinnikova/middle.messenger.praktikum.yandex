@@ -1,11 +1,11 @@
-{{#> layout style="login.less" title=login.title}}
+{{#> layout style="login.less" title=login.title script="registration.ts"}}
     <div class="login">
         <h2 class="login__title">Авторизация</h2>
 
         <div class="login__wrapper">
-            {{> input class="login__input-wrapper" type="text" title="Логин" value=login.login }}
+            {{> input class="login__input-wrapper" id="login" type="text" title="Логин" value=login.login }}
 
-            {{> input class="login__input-wrapper" type="password" title="Пароль" value=login.password }}
+            {{> input class="login__input-wrapper" id="password" type="password" title="Пароль" value=login.password }}
 
             <a href="/chat">
                 <div class="login__button-wrapper">

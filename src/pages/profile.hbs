@@ -1,4 +1,4 @@
-{{#> layout style="profile.less" title=profile.title}}
+{{#> layout style="profile.less" title=profile.title script="registration.ts"}}
     <div class="profile">
         <div class="profile__back">
             <a href="/chat">
@@ -14,17 +14,17 @@
             </div>
 
             <div class="row">
-                {{> input class="profile__input-wrapper" type="email" title="E-mail" value=profile.email }}
-                {{> input class="profile__input-wrapper" type="text" title="Логин" value=profile.login }}
+                {{> input class="profile__input-wrapper" id="email" type="email" title="E-mail" value=profile.email }}
+                {{> input class="profile__input-wrapper" id="login" type="text" title="Логин" value=profile.login }}
             </div>
 
             <div class="row">
-                {{> input class="profile__input-wrapper" type="text" title="Имя" value=profile.first_name }}
-                {{> input class="profile__input-wrapper" type="text" title="Фамилия" value=profile.second_name }}
+                {{> input class="profile__input-wrapper" id="first_name" type="text" title="Имя" value=profile.first_name }}
+                {{> input class="profile__input-wrapper" id="second_name" type="text" title="Фамилия" value=profile.second_name }}
             </div>
 
             <div class="row">
-                {{> input class="profile__input-wrapper" type="text" title="Телефон" value=profile.phone }}
+                {{> input class="profile__input-wrapper" id="phone" type="text" title="Телефон" value=profile.phone }}
             </div>
 
             <div class="profile__button-wrapper">

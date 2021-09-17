@@ -6,11 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="main.less">
-        <link rel="stylesheet" href="./layouts/{{style}}">
+        <link rel="stylesheet" href="./pages/{{style}}">
         <title> {{ title }}  </title>
     </head>
 
     <body>
         {{> @partial-block }}
+
+        <script type="text/javascript" src="./pages/{{script}}"></script>
     </body>
 </html>

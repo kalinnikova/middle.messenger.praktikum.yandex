@@ -6,18 +6,27 @@
   "scripts": {
     "clear": "rm -rf ./dist",
     "start": "npm run build && serve ./dist -p 3000",
-    "build": "npm run clear && parcel build src/*.html --no-cache"
+    "build": "npm run clear && parcel build src/*.html --no-cache",
+    "eslint": "eslint",
+    "stylelint": "stylelint --fix **/*.less"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
     "less": "^4.1.1",
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-handlebars": "^0.4.4",
-    "serve": "^12.0.0"
+    "serve": "^12.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-airbnb": "0.0.0",
+    "stylelint-order": "^4.1.0",
+    "typescript": "^4.4.3"
   },
   "dependencies": {
-    "handlebars": "^4.7.7"
+    "handlebars": "^4.7.7",
+    "stylelint-scss": "^3.21.0"
   }
 }

@@ -1,0 +1,100 @@
+@import "../variables";
+
+.chat {
+	height: 100%;
+
+	&__profile {
+		font-size: 12px;
+		color: @chat-text-color;
+		padding: 20px;
+		text-align: right;
+	}
+
+	&__wrapper {
+		display: flex;
+		height: 100%;
+	}
+
+	&__dialogues {
+		background-color: @chat-dialogues-color;
+		width: 23%;
+	}
+
+	&__search {
+		background-color: @background-grey-color;
+		border: 0;
+		border-radius: 5px;
+		width: 87%;
+		padding: 10px;
+		margin-left: 10px;
+		margin-bottom: 10px;
+	}
+
+	&__messages-wrapper {
+		width: 77%;
+		background-color: @white-color;
+	}
+
+	&__dialogue {
+		position: relative;
+		border-top: 1px solid @border-grey-color;
+		height: 63px;
+	}
+
+	&__avatar {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width: 47px;
+		height: 47px;
+		border-radius: 50%;
+		background-color: @background-grey-color;
+	}
+
+	&__name {
+		font-size: 13px;
+		font-weight: 600;
+		padding-left: 70px;
+		padding-top: 10px;
+	}
+
+	&__last-message {
+		font-size: 13px;
+		padding-left: 70px;
+		padding-top: 5px;
+	}
+
+	&__message-input {
+		display: flex;
+		border-top: 1px solid @border-grey-color;
+		position: absolute;
+		bottom: 0;
+		padding-top: 11px;
+		padding-bottom: 11px;
+		padding-left: 11px;
+	}
+
+	&__message {
+		width: 849px;
+		height: 32px;
+		background-color: @background-grey-color;
+		border-radius: 30px;
+		border: 0;
+		padding-left: 10px;
+	}
+
+	&__send {
+		color: @white-color;
+		background-color: @light-green-color;
+		border-radius: 50%;
+		width: 28px;
+		height: 28px;
+		margin-left: 11px;
+
+		span {
+			position: relative;
+			left: 10px;
+			top: 5px;
+		}
+	}
+}
