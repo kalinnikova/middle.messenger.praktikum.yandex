@@ -45,3 +45,23 @@ input {
 	display: flex;
 	margin-bottom: 16px;
 }
+
+.error {
+	display: none;
+	color: @error-color;
+	font-size: 12px;
+	position: absolute;
+	top: 6em;
+
+	&--active {
+		display: block;
+	}
+}
+
+.input-error {
+	border-color: @error-color;
+}
+
+.input-wrapper {
+	position: relative;
+}

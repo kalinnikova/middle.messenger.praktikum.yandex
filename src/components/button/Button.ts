@@ -1,16 +1,37 @@
-import Block from "../../modules/block";
-// Ваш реализованный шаблонизатор
-import { compile } from "../../utils/templator";
-import { template } from "./template";
+import {Block} from "../../utils/block";
+import Handlebars from 'handlebars';
 
-export default class Button extends Block {
-    constructor(props) {
-        // Создаём враппер DOM-элемент button
-        super("button", props);
+export interface ButtonProps {
+    classImg?: string;
+    inputs: Block[];
+    link?: string;
+    alert?: boolean;
+    className: string;
+    title: string;
+    id: string;
+    fn: () => void;
+}
+
+export class Button extends Block {
+
+    constructor(props: ButtonProps) {
+        super("div", props);
+        console.log(this.props)
+    }
+
+    componentDidRender() {
+        console.log('rendered')
+        this.props.fn();
     }
 
     render() {
-        // В данном случае render возвращает строкой разметку из шаблонизатора
-        return compile(template, this.props);
+        let template = Handlebars.compile(`
+            <button id={{id}} type="button" class={{className}} onClick={{fn}}>
+                {{title}}
+            </button>
+        `);
+        var render = template(this.props);
+        this.componentDidRender();
+        return render;
     }
 }

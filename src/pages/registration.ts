@@ -1,51 +1,157 @@
-const form  = document.getElementsByTagName('form')[0];
+import {render} from "../utils/renderDOM";
+import {Button, ButtonProps} from "../components/button/Button";
+import {showEmailError, showLoginError, showNameError, showPasswordError, showPhoneError} from "../utils/show-errors";
 
-const email = document.getElementById("email");
-console.log(email);
+const registrationForm  = document.getElementsByTagName('form')[0];
+
+const email = <HTMLInputElement>document.getElementById("email");
 const emailError = document.getElementById("email-error");
 
-email.addEventListener('input', function (event) {
-    // Каждый раз, когда пользователь что-то вводит,
-    // мы проверяем, являются ли поля формы валидными
+const registrationLogin = <HTMLInputElement>document.getElementById("registration-login");
+const registrationLoginError = document.getElementById("registration-login-error");
 
-    if (email.validity.valid) {
-        // Если на момент валидации какое-то сообщение об ошибке уже отображается,
-        // если поле валидно, удаляем сообщение
-        console.log(emailError);
-        emailError.textContent = ''; // Сбросить содержимое сообщения
-        emailError.className = 'error'; // Сбросить визуальное состояние сообщения
+const firstName = <HTMLInputElement>document.getElementById("first-name");
+const firstNameError = <HTMLInputElement>document.getElementById("first-name-error");
+
+const secondName = <HTMLInputElement>document.getElementById("second-name");
+const secondNameError = document.getElementById("second-name-error");
+
+const phone = <HTMLInputElement>document.getElementById("phone");
+const phoneError = document.getElementById("phone-error");
+
+const registrationPassword = <HTMLInputElement>document.getElementById("password");
+const registrationPasswordError = document.getElementById("password-error");
+
+const registrationPassword2 = <HTMLInputElement>document.getElementById("password-2");
+const registrationPassword2Error = document.getElementById("password-2-error");
+
+type HTMLInputFocusEvent = FocusEvent & {currentTarget: HTMLInputElement}
+
+email?.addEventListener("focus", function (event: HTMLInputFocusEvent) {
+    if (email.validity.valid && emailError) {
+        emailError.textContent = "";
+        email.classList.remove("input-error");
+        emailError.classList.remove("input-error");
     } else {
-        // Если поле не валидно, показываем правильную ошибку
-        showError();
+        showEmailError(email, emailError!);
     }
 });
 
-form.addEventListener('submit', function (event) {
-    // Если поле email валдно, позволяем форме отправляться
-
-    if(!email.validity.valid) {
-        // Если поле email не валидно, отображаем соответствующее сообщение об ошибке
-        showError();
-        // Затем предотвращаем стандартное событие отправки формы
-        event.preventDefault();
+email?.addEventListener("blur", function (event: HTMLInputFocusEvent) {
+    if (email.validity.valid && emailError) {
+        emailError.textContent = "";
+        email.classList.remove("input-error");
+        emailError.classList.remove("error");
+    } else {
+        showEmailError(email, emailError!);
     }
 });
 
-function showError() {
-    if(email.validity.valueMissing) {
-        // Если поле пустое,
-        // отображаем следующее сообщение об ошибке
-        emailError.textContent = 'You need to enter an e-mail address.';
-    } else if(email.validity.typeMismatch) {
-        // Если поле содержит не email-адрес,
-        // отображаем следующее сообщение об ошибке
-        emailError.textContent = 'Entered value needs to be an e-mail address.';
-    } else if(email.validity.tooShort) {
-        // Если содержимое слишком короткое,
-        // отображаем следующее сообщение об ошибке
-        emailError.textContent = `Email should be at least ${ email.minLength } characters; you entered ${ email.value.length }.`;
+registrationLogin?.addEventListener("focus", function (event: HTMLInputFocusEvent) {
+    if (event.currentTarget?.value && registrationLoginError) {
+        showLoginError(event.currentTarget.value, event.currentTarget, registrationLoginError);
     }
+});
 
-    // Задаём соответствующую стилизацию
-    emailError.className = 'error active';
+registrationLogin?.addEventListener("blur", function (event: HTMLInputFocusEvent) {
+    if (event.currentTarget?.value && registrationLoginError) {
+        showLoginError(event.currentTarget.value, event.currentTarget, registrationLoginError);
+    }
+});
+
+firstName?.addEventListener("focus", function (event: HTMLInputFocusEvent) {
+    if (event.currentTarget?.value && firstNameError) {
+        showNameError(event.currentTarget.value, event.currentTarget, firstNameError);
+    }
+});
+
+firstName?.addEventListener("blur", function (event: HTMLInputFocusEvent) {
+    if (event.currentTarget?.value && firstNameError) {
+        showNameError(event.currentTarget.value, event.currentTarget, firstNameError);
+    }
+});
+
+secondName?.addEventListener("focus", function (event: HTMLInputFocusEvent) {
+    if (event.currentTarget?.value && secondNameError) {
+        showNameError(event.currentTarget.value, event.currentTarget, secondNameError);
+    }
+});
+
+secondName?.addEventListener("blur", function (event: HTMLInputFocusEvent) {
+    if (event.currentTarget?.value && secondNameError) {
+        showNameError(event.currentTarget.value, event.currentTarget, secondNameError);
+    }
+});
+
+phone?.addEventListener("focus", function (event: HTMLInputFocusEvent) {
+    if (event.currentTarget?.value && phoneError) {
+        showNameError(event.currentTarget.value, event.currentTarget, phoneError);
+    }
+});
+
+phone?.addEventListener("blur", function (event: HTMLInputFocusEvent) {
+    if (event.currentTarget?.value && phoneError) {
+        showNameError(event.currentTarget.value, event.currentTarget, phoneError);
+    }
+});
+
+registrationPassword?.addEventListener("focus", function (event: HTMLInputFocusEvent) {
+    if (event.currentTarget?.value && registrationPasswordError) {
+        showPasswordError(event.currentTarget.value, event.currentTarget, registrationPasswordError);
+    }
+});
+
+registrationPassword?.addEventListener("blur", function (event: HTMLInputFocusEvent) {
+    if (event.currentTarget?.value && registrationPasswordError) {
+        showPasswordError(event.currentTarget.value, event.currentTarget, registrationPasswordError);
+    }
+});
+
+registrationPassword2?.addEventListener("focus", function (event: HTMLInputFocusEvent) {
+    if (event.currentTarget?.value && registrationPasswordError) {
+        showPasswordError(event.currentTarget.value, event.currentTarget, registrationPasswordError);
+    }
+});
+
+registrationPassword2?.addEventListener("blur", function (event: HTMLInputFocusEvent) {
+    if (event.currentTarget?.value && registrationPasswordError) {
+        showPasswordError(event.currentTarget.value, event.currentTarget, registrationPasswordError);
+    }
+});
+
+const button = new Button(
+    <ButtonProps>{
+        className: "registration__button",
+        title: "Зарегистрироваться",
+        id: "registration-button",
+        fn: submitRegistrationForm
+    });
+render(".registration__button-wrapper", button);
+
+registrationForm.addEventListener("submit", function (event: Event) {
+    submitRegistrationForm();
+});
+
+function submitRegistrationForm() {
+    if (!email.validity.valid && emailError) {
+        showEmailError(email, emailError);
+    }
+    if (registrationLogin?.value && registrationLoginError) {
+        showLoginError(registrationLogin.value, registrationLogin, registrationLoginError);
+    }
+    if (firstName?.value && firstNameError) {
+        showNameError(firstName.value, firstName, firstNameError);
+    }
+    if (secondName?.value && secondNameError) {
+        showNameError(secondName.value, secondName, secondNameError);
+    }
+    if (phone?.value && phoneError) {
+        showPhoneError(phone.value, phone, phoneError);
+    }
+    if (registrationPassword?.value && registrationPasswordError) {
+        showPasswordError(registrationPassword.value, registrationPassword, registrationPasswordError);
+    }
+    if (registrationPassword2?.value && registrationPassword2Error) {
+        showPasswordError(registrationPassword2.value, registrationPassword2, registrationPassword2Error);
+    }
 }

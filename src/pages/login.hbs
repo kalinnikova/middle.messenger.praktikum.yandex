@@ -1,15 +1,22 @@
-{{#> layout style="login.less" title=login.title script="registration.ts"}}
-    <div class="login">
+{{#> layout style="login.less" title=login.title script="login.ts"}}
+    <form class="login">
         <h2 class="login__title">Авторизация</h2>
 
         <div class="login__wrapper">
-            {{> input class="login__input-wrapper" id="login" type="text" title="Логин" value=login.login }}
+            <div class="input-wrapper">
+                {{> input class="login__input-wrapper" id="login" type="text" title="Логин" value=login.login }}
 
-            {{> input class="login__input-wrapper" id="password" type="password" title="Пароль" value=login.password }}
+                <span id="login-error" class="error"></span>
+            </div>
+
+            <div class="input-wrapper">
+                {{> input class="login__input-wrapper" id="password" type="password" title="Пароль" value=login.password }}
+
+                <span id="password-error" class="error"></span>
+            </div>
 
             <a href="/chat">
                 <div class="login__button-wrapper">
-                    {{> button title="Войти" class="login__button"}}
                 </div>
             </a>
 
@@ -19,5 +26,5 @@
                 </a>
             </div>
         </div>
-    </div>
+    </form>
 {{/layout}}

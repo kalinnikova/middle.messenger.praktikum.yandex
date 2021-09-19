@@ -1,36 +1,62 @@
 {{#> layout style="registration.less" title=registration.title script="registration.ts"}}
-    <div class="registration">
+    <form class="registration">
         <h2 class="registration__title">Регистрация</h2>
 
         <div class="registration__wrapper">
             <div class="row">
-                {{> input class="registration__input-wrapper" id="email" type="email" title="E-mail" value=registration.email }}
 
-                <span id="email-error" class="error" aria-live="polite"></span>
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" id="email" type="email" title="E-mail" value=registration.email }}
 
-                {{> input class="registration__input-wrapper" id="login" type="text" title="Логин" value=registration.login }}
+                    <span id="email-error" class="error"></span>
+                </div>
+
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" id="registration-login" type="text" title="Логин" value=registration.login }}
+
+                    <span id="registration-login-error" class="error"></span>
+                </div>
             </div>
 
             <div class="row">
-                {{> input class="registration__input-wrapper" id="first-name" type="text" title="Имя" value=registration.first_name }}
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" id="first-name" type="text" title="Имя" value=registration.first_name }}
 
-                {{> input class="registration__input-wrapper" id="second-name" type="text" title="Фамилия" value=registration.second_name }}
+                    <span id="first-name-error" class="error"></span>
+                </div>
+
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" id="second-name" type="text" title="Фамилия" value=registration.second_name }}
+
+                    <span id="second-name-error" class="error"></span>
+                </div>
             </div>
 
             <div class="row">
-                {{> input class="registration__input-wrapper" id="phone" type="text" title="Телефон" value=registration.phone }}
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" id="phone" type="phone" title="Телефон" value=registration.phone }}
+
+                    <span id="phone-error" class="error"></span>
+                </div>
             </div>
 
             <div class="line"></div>
 
             <div class="row">
-                {{> input class="registration__input-wrapper" id="password" type="password" title="Пароль" value=registration.password }}
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" id="password" type="password" title="Пароль" value=registration.password }}
 
-                {{> input class="registration__input-wrapper" id="password-2" type="password" title="Повторите пароль" value=registration.password }}
+                    <span id="password-error" class="error"></span>
+                </div>
+
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" id="password-2" type="password" title="Повторите пароль" value=registration.password }}
+
+                    <span id="password-2-error" class="error"></span>
+                </div>
             </div>
 
             <div class="registration__button-wrapper">
-                {{> button class="registration__button" title="Зарегистрироваться"}}
             </div>
 
             <div class="registration__link">
@@ -39,5 +65,5 @@
                 </a>
             </div>
         </div>
-    </div>
+    </form>
 {{/layout}}

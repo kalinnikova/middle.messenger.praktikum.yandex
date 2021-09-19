@@ -13,9 +13,13 @@ export class EventBus {
         this.listeners[event].push(callback);
     }
 
-    emit(event) {
-        this.listeners[event].forEach(function(listener) {
-            listener();
+    emit(event: string, ...args: any) {
+        if (!this.listeners[event]) {
+            throw new Error(`Нет события: ${event}`);
+        }
+
+        this.listeners[event].forEach(function(listener:Function) {
+            listener(...args);
         });
     }
 
