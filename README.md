@@ -1,3 +1,5 @@
+Pull Request: https://github.com/kalinnikova/middle.messenger.praktikum.yandex/pull/2
+
 ## Chat
 
 Это приложение чата, созданное с использованием Handlebars, server.
