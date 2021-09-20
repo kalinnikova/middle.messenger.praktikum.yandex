@@ -16,12 +16,6 @@ export class Button extends Block {
 
     constructor(props: ButtonProps) {
         super("div", props);
-        console.log(this.props)
-    }
-
-    componentDidRender() {
-        console.log('rendered')
-        this.props.fn();
     }
 
     render() {
@@ -30,8 +24,6 @@ export class Button extends Block {
                 {{title}}
             </button>
         `);
-        var render = template(this.props);
-        this.componentDidRender();
-        return render;
+        return template(this.props);
     }
 }
