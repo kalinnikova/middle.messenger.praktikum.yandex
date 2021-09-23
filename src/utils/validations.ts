@@ -16,7 +16,7 @@ export const validateEmail = (value: string): boolean => {
 }
 
 export const validatePassword = (value: string): boolean => {
-    if (value.length < 8 || value.length > 40) {
+    if (value.length >= 8 && value.length <= 40) {
         return false;
     }
 

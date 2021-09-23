@@ -20,7 +20,7 @@ export class Button extends Block {
 
     render() {
         let template = Handlebars.compile(`
-            <button id={{id}} type="button" class={{className}} onClick={{fn}}>
+            <button id={{id}} type="button" class={{className}} onClick={{fn}} link={{link}}>
                 {{title}}
             </button>
         `);

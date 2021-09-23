@@ -1,19 +1,11 @@
 import {showMessageError} from "../utils/show-errors";
+import {addValidation} from "../utils/add-validation";
 
-const message = <HTMLInputElement>document.getElementById("message");
-const messageError = document.getElementById("message-error");
+const chatValidationElements = [{
+    inputId: 'message',
+    errorId: 'message-error',
+    callback: showMessageError
+}]
 
-type HTMLInputFocusEvent = FocusEvent & {currentTarget: HTMLInputElement}
-
-message?.addEventListener("focus", function (event: HTMLInputFocusEvent) {
-    if (messageError) {
-        showMessageError(message.value, message, messageError);
-    }
-});
-
-message?.addEventListener("blur", function (event: HTMLInputFocusEvent) {
-    if (messageError) {
-        showMessageError(message.value, message, messageError);
-    }
-});
-
+// @ts-ignore
+addValidation(chatValidationElements);

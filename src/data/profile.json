@@ -2,5 +2,8 @@
   "title": "Profile",
   "style": "profile.css",
   "login": "Kalina",
-  "password":  "password"
+  "first_name": "Иван",
+  "second_name": "Иванов",
+  "phone": "888888888",
+  "email": "awed@wef.erf"
 }

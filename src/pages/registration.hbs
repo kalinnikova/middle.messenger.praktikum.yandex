@@ -6,37 +6,37 @@
             <div class="row">
 
                 <div class="input-wrapper">
-                    {{> input class="registration__input-wrapper" id="email" type="email" title="E-mail" value=registration.email }}
+                    {{> input class="registration__input-wrapper" name="email" type="email" title="E-mail" value=registration.email }}
 
-                    <span id="email-error" class="error"></span>
+                    <span name="email-error" class="error"></span>
                 </div>
 
                 <div class="input-wrapper">
-                    {{> input class="registration__input-wrapper" id="registration-login" type="text" title="Логин" value=registration.login }}
+                    {{> input class="registration__input-wrapper" name="registration-login" type="text" title="Логин" value=registration.login }}
 
-                    <span id="registration-login-error" class="error"></span>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="input-wrapper">
-                    {{> input class="registration__input-wrapper" id="first-name" type="text" title="Имя" value=registration.first_name }}
-
-                    <span id="first-name-error" class="error"></span>
-                </div>
-
-                <div class="input-wrapper">
-                    {{> input class="registration__input-wrapper" id="second-name" type="text" title="Фамилия" value=registration.second_name }}
-
-                    <span id="second-name-error" class="error"></span>
+                    <span name="registration-login-error" class="error"></span>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-wrapper">
-                    {{> input class="registration__input-wrapper" id="phone" type="phone" title="Телефон" value=registration.phone }}
+                    {{> input class="registration__input-wrapper" name="first-name" type="text" title="Имя" value=registration.first_name }}
 
-                    <span id="phone-error" class="error"></span>
+                    <span name="first-name-error" class="error"></span>
+                </div>
+
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" name="second-name" type="text" title="Фамилия" value=registration.second_name }}
+
+                    <span name="second-name-error" class="error"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" name="phone" type="phone" title="Телефон" value=registration.phone }}
+
+                    <span name="phone-error" class="error"></span>
                 </div>
             </div>
 
@@ -44,15 +44,15 @@
 
             <div class="row">
                 <div class="input-wrapper">
-                    {{> input class="registration__input-wrapper" id="password" type="password" title="Пароль" value=registration.password }}
+                    {{> input class="registration__input-wrapper" name="password" type="password" title="Пароль" value=registration.password }}
 
-                    <span id="password-error" class="error"></span>
+                    <span name="password-error" class="error"></span>
                 </div>
 
                 <div class="input-wrapper">
-                    {{> input class="registration__input-wrapper" id="password-2" type="password" title="Повторите пароль" value=registration.password }}
+                    {{> input class="registration__input-wrapper" name="password-2" type="password" title="Повторите пароль" value=registration.password2 }}
 
-                    <span id="password-2-error" class="error"></span>
+                    <span name="password-2-error" class="error"></span>
                 </div>
             </div>
 

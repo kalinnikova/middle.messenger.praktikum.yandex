@@ -1,16 +1,22 @@
-import {validateLogin, validateMessage, validateName, validatePassword, validatePhone} from "./validations";
+import {
+    validateEmail,
+    validateLogin,
+    validateMessage,
+    validateName,
+    validatePassword,
+    validatePhone
+} from "./validations";
 
-export function showEmailError(email: HTMLInputElement, emailError: HTMLElement) {
-    if (email.validity.valueMissing) {
-        emailError.textContent = "Заполните поле e-mail";
-    } else if (email.validity.typeMismatch) {
-        emailError.textContent = "Некорректно введен e-mail";
-    } else if (email.validity.tooShort) {
-        emailError.textContent = `Минимальная длинна e-mail: ${ email.minLength }`;
+export function showEmailError(email: string, emailEl: HTMLInputElement, emailError: HTMLElement) {
+    if (validateEmail(email)) {
+        emailEl?.classList.remove("input-error");
+        emailError.textContent = "";
+        emailError.classList.remove("error--active");
+    } else {
+        emailEl?.classList.add("input-error");
+        emailError.textContent = "E-mail введен неверно";
+        emailError.classList.add("error--active");
     }
-
-    email.classList.add("input-error");
-    emailError.classList.add("error--active");
 }
 
 export function showLoginError(login: string, loginEl: HTMLElement, loginError: HTMLElement) {

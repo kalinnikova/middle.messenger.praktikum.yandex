@@ -8,44 +8,44 @@
 
         <div class="profile__wrapper">
             <div class="profile__avatar">
-                <span>
+                <span class="profile__question">
                 ?
                 </span>
             </div>
 
             <div class="row">
                 <div class="input-wrapper">
-                    {{> input class="profile__input-wrapper" id="profile-email" type="email" title="E-mail" value=profile.email }}
+                    {{> input class="profile__input-wrapper" name="profile-email" type="email" title="E-mail" value=profile.email }}
 
-                    <span id="profile-email-error" class="error"></span>
+                    <span name="profile-email-error" class="error"></span>
                 </div>
 
                 <div class="input-wrapper">
-                    {{> input class="profile__input-wrapper" id="profile-login" type="text" title="Логин" value=profile.login }}
+                    {{> input class="profile__input-wrapper" name="profile-login" type="text" title="Логин" value=profile.login }}
 
-                    <span id="profile-login-error" class="error"></span>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="input-wrapper">
-                    {{> input class="profile__input-wrapper" id="profile-first-name" type="text" title="Имя" value=profile.first_name }}
-
-                    <span id="profile-first-name-error" class="error"></span>
-                </div>
-
-                <div class="input-wrapper">
-                    {{> input class="profile__input-wrapper" id="profile-second-name" type="text" title="Фамилия" value=profile.second_name }}
-
-                    <span id="profile-second-name-error" class="error"></span>
+                    <span name="profile-login-error" class="error"></span>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-wrapper">
-                    {{> input class="profile__input-wrapper" id="profile-phone" type="text" title="Телефон" value=profile.phone }}
+                    {{> input class="profile__input-wrapper" name="profile-first-name" type="text" title="Имя" value=profile.first_name }}
 
-                    <span id="profile-phone-error" class="error"></span>
+                    <span name="profile-first-name-error" class="error"></span>
+                </div>
+
+                <div class="input-wrapper">
+                    {{> input class="profile__input-wrapper" name="profile-second-name" type="text" title="Фамилия" value=profile.second_name }}
+
+                    <span name="profile-second-name-error" class="error"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-wrapper">
+                    {{> input class="profile__input-wrapper" name="profile-phone" type="text" title="Телефон" value=profile.phone }}
+
+                    <span name="profile-phone-error" class="error"></span>
                 </div>
             </div>
 

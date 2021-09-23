@@ -46,15 +46,19 @@ input {
 	margin-bottom: 16px;
 }
 
-.error {
+.not-visible {
 	display: none;
+}
+
+.error {
+	opacity: 0;
 	color: @error-color;
 	font-size: 12px;
 	position: absolute;
 	top: 6em;
 
 	&--active {
-		display: block;
+		opacity: 1;
 	}
 }
 
