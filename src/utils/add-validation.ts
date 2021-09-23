@@ -34,7 +34,6 @@ export const addValidation = (validationParameters: ValidationParameters[]) => {
 }
 
 export const formValidation = (validationParameters: ValidationParameters[]) => {
-    debugger
     const errors = validationParameters.map(({inputName, errorName, callback}) => addSubmitValidations(inputName, errorName, callback));
 
     return errors.includes(true);
