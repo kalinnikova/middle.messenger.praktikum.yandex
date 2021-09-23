@@ -122,12 +122,12 @@ export class Block {
 
     show (): void {
         // @ts-ignore
-        this.getContent().style.display = "block";
+        this.getContent()?.classList.remove("not-visible");
     }
 
     hide (): void {
         // @ts-ignore
-        this.getContent().style.display = "none";
+        this.getContent()?.classList.add("not-visible");
     }
 
     _addEvents (): void {
