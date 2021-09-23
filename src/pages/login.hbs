@@ -1,0 +1,28 @@
+{{#> layout style="login.less" title=login.title script="login.ts"}}
+    <form class="login">
+        <h2 class="login__title">Авторизация</h2>
+
+        <div class="login__wrapper">
+            <div class="input-wrapper">
+                {{> input class="login__input-wrapper" name="login" type="text" title="Логин" value=login.login }}
+
+                <span name="login-error" class="error"></span>
+            </div>
+
+            <div class="input-wrapper">
+                {{> input class="login__input-wrapper" name="password" type="password" title="Пароль" value=login.password }}
+
+                <span name="password-error" class="error"></span>
+            </div>
+
+            <div class="login__button-wrapper">
+            </div>
+
+            <div class="login__link">
+                <a href="/registration">
+                    Нет аккаунта?
+                </a>
+            </div>
+        </div>
+    </form>
+{{/layout}}

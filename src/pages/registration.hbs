@@ -1,0 +1,69 @@
+{{#> layout style="registration.less" title=registration.title script="registration.ts"}}
+    <form class="registration">
+        <h2 class="registration__title">Регистрация</h2>
+
+        <div class="registration__wrapper">
+            <div class="row">
+
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" name="email" type="email" title="E-mail" value=registration.email }}
+
+                    <span name="email-error" class="error"></span>
+                </div>
+
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" name="registration-login" type="text" title="Логин" value=registration.login }}
+
+                    <span name="registration-login-error" class="error"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" name="first-name" type="text" title="Имя" value=registration.first_name }}
+
+                    <span name="first-name-error" class="error"></span>
+                </div>
+
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" name="second-name" type="text" title="Фамилия" value=registration.second_name }}
+
+                    <span name="second-name-error" class="error"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" name="phone" type="phone" title="Телефон" value=registration.phone }}
+
+                    <span name="phone-error" class="error"></span>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="row">
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" name="password" type="password" title="Пароль" value=registration.password }}
+
+                    <span name="password-error" class="error"></span>
+                </div>
+
+                <div class="input-wrapper">
+                    {{> input class="registration__input-wrapper" name="password-2" type="password" title="Повторите пароль" value=registration.password2 }}
+
+                    <span name="password-2-error" class="error"></span>
+                </div>
+            </div>
+
+            <div class="registration__button-wrapper">
+            </div>
+
+            <div class="registration__link">
+                <a href="/">
+                    Войти
+                </a>
+            </div>
+        </div>
+    </form>
+{{/layout}}

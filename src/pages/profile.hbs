@@ -1,0 +1,62 @@
+{{#> layout style="profile.less" title=profile.title script="profile.ts"}}
+    <form class="profile">
+        <div class="profile__back">
+            <a href="/chat">
+                < Назад
+            </a>
+        </div>
+
+        <div class="profile__wrapper">
+            <div class="profile__avatar">
+                <span class="profile__question">
+                ?
+                </span>
+            </div>
+
+            <div class="row">
+                <div class="input-wrapper">
+                    {{> input class="profile__input-wrapper" name="profile-email" type="email" title="E-mail" value=profile.email }}
+
+                    <span name="profile-email-error" class="error"></span>
+                </div>
+
+                <div class="input-wrapper">
+                    {{> input class="profile__input-wrapper" name="profile-login" type="text" title="Логин" value=profile.login }}
+
+                    <span name="profile-login-error" class="error"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-wrapper">
+                    {{> input class="profile__input-wrapper" name="profile-first-name" type="text" title="Имя" value=profile.first_name }}
+
+                    <span name="profile-first-name-error" class="error"></span>
+                </div>
+
+                <div class="input-wrapper">
+                    {{> input class="profile__input-wrapper" name="profile-second-name" type="text" title="Фамилия" value=profile.second_name }}
+
+                    <span name="profile-second-name-error" class="error"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-wrapper">
+                    {{> input class="profile__input-wrapper" name="profile-phone" type="text" title="Телефон" value=profile.phone }}
+
+                    <span name="profile-phone-error" class="error"></span>
+                </div>
+            </div>
+
+            <div class="profile__button-wrapper">
+            </div>
+
+            <div class="profile__link">
+                <a href="/">
+                    Выйти
+                </a>
+            </div>
+        </div>
+    </form>
+{{/layout}}
