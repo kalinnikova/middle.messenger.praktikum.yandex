@@ -16,13 +16,7 @@ export const validateEmail = (value: string): boolean => {
 }
 
 export const validatePassword = (value: string): boolean => {
-    if (value.length >= 8 && value.length <= 40) {
-        return false;
-    }
-
-    const upperCaseRe = /^[A-ZА-Я]$/gi;
-    const digitalRe = /\d/gi;
-    return upperCaseRe.test(value) && digitalRe.test(value);
+    return !(value.length < 8 && value.length > 40);
 }
 
 export const validatePhone = (value: string): boolean => {

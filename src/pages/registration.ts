@@ -40,20 +40,24 @@ const registrationValidationElements = [
 
 addValidation(registrationValidationElements);
 
+function submitRegistrationForm() {
+    const isError = formValidation(registrationValidationElements)
+
+    if (!isError) {
+        window.location.assign("/chat");
+    }
+}
+
 const button = new Button(
     <ButtonProps>{
         className: "registration__button",
         title: "Зарегистрироваться",
         id: "registration-button",
-        link: "/chat",
-        fn: submitRegistrationForm
+        type: "submit"
     });
 render(".registration__button-wrapper", button);
 
 registrationForm.addEventListener("submit", function (event: Event) {
+    event.preventDefault();
     submitRegistrationForm();
 });
-
-function submitRegistrationForm() {
-    formValidation(registrationValidationElements);
-}

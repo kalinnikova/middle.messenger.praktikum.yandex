@@ -19,20 +19,24 @@ const chatValidationElements = [
 
 addValidation(chatValidationElements);
 
+function submitLoginForm() {
+    const isError = formValidation(chatValidationElements);
+
+    if (!isError) {
+        window.location.assign("/chat");
+    }
+}
+
 const button = new Button(
     <ButtonProps>{
         className: "login__button",
         title: "Войти",
         id: "login-button",
-        link: "/chat",
-        fn: submitLoginForm
+        type: "submit"
     });
 render(".login__button-wrapper", button);
 
 loginForm.addEventListener("submit", function (event: Event) {
+    event.preventDefault();
     submitLoginForm();
 });
-
-function submitLoginForm() {
-    formValidation(chatValidationElements);
-}

@@ -4,12 +4,11 @@ import Handlebars from 'handlebars';
 export interface ButtonProps {
     classImg?: string;
     inputs: Block[];
-    link?: string;
     alert?: boolean;
     className: string;
     title: string;
     id: string;
-    fn: () => void;
+    type: string;
 }
 
 export class Button extends Block {
@@ -20,7 +19,7 @@ export class Button extends Block {
 
     render() {
         let template = Handlebars.compile(`
-            <button id={{id}} type="button" class={{className}} onClick={{fn}} link={{link}}>
+            <button id={{id}} type={{type}} class={{className}}>
                 {{title}}
             </button>
         `);

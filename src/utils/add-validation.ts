@@ -1,5 +1,5 @@
 type HTMLInputFocusEvent = FocusEvent & {currentTarget: HTMLInputElement}
-type ValidationParameters = {inputName: string, errorName: string, callback: (message: string, messageEl: HTMLElement, messageError: HTMLElement) => void}
+type ValidationParameters = {inputName: string, errorName: string, callback: (message: string, messageEl: HTMLElement, messageError: HTMLElement) => boolean}
 
 const addValidationListeners = (inputName: ValidationParameters['inputName'], errorName: ValidationParameters['errorName'], callback: ValidationParameters['callback']) => {
     const inputEl = <HTMLInputElement>document.getElementsByName(inputName)[0];
@@ -23,12 +23,10 @@ const addSubmitValidations = (inputName: ValidationParameters['inputName'], erro
     const errorEl = document.getElementsByName(errorName)[0];
 
     if (errorEl) {
-        callback(inputEl.value, inputEl, errorEl);
+        return callback(inputEl.value, inputEl, errorEl);
     }
 
-    if (errorEl) {
-        callback(inputEl.value, inputEl, errorEl);
-    }
+    return false;
 }
 
 export const addValidation = (validationParameters: ValidationParameters[]) => {
@@ -36,5 +34,8 @@ export const addValidation = (validationParameters: ValidationParameters[]) => {
 }
 
 export const formValidation = (validationParameters: ValidationParameters[]) => {
-    validationParameters.forEach(({inputName, errorName, callback}) => addSubmitValidations(inputName, errorName, callback));
+    debugger
+    const errors = validationParameters.map(({inputName, errorName, callback}) => addSubmitValidations(inputName, errorName, callback));
+
+    return errors.includes(true);
 }

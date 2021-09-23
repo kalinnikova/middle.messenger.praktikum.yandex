@@ -35,19 +35,24 @@ const profileValidationElements = [
 
 addValidation(profileValidationElements);
 
+function submitRegistrationForm() {
+    const isError = formValidation(profileValidationElements)
+
+    if (!isError) {
+        window.location.assign("/chat");
+    }
+}
+
 const button = new Button(
     <ButtonProps>{
         className: "profile__button",
         title: "Сохранить",
         id: "profile-button",
-        fn: submitRegistrationForm
+        type: "submit"
     });
 render(".profile__button-wrapper", button);
 
 profileForm.addEventListener("submit", function (event: Event) {
+    event.preventDefault();
     submitRegistrationForm();
 });
-
-function submitRegistrationForm() {
-    formValidation(profileValidationElements);
-}
